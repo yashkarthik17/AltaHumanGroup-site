@@ -1,0 +1,74 @@
+
+import React, { useEffect } from 'react';
+import { Hero } from '../components/Hero';
+import { TypewriterSection } from '../components/TypewriterSection';
+import { CampaignIntro } from '../components/CampaignIntro';
+import { Timeline } from '../components/Timeline';
+import { CampaignChapters } from '../components/CampaignChapters';
+import { ImpactStats } from '../components/ImpactStats';
+import { WearTheCircle } from '../components/WearTheCircle';
+import { SocialShare } from '../components/SocialShare';
+
+export const Campaign: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-white text-gray-900 selection:bg-black selection:text-white pt-0">
+      <main>
+        {/* Visual impactful intro with zooming logo and inclusive video */}
+        <Hero backgroundImage="/attached_assets/Gemini_Generated_Image_vb8zh5vb8zh5vb8z_1770005567495.png" />
+        
+        {/* Rhythmic transition component */}
+        <TypewriterSection />
+
+        {/* SECTION 1: Understanding The Problem */}
+        <CampaignIntro />
+
+        {/* SECTION 2: History */}
+        <Timeline />
+        
+        {/* SECTION 3: Deep Dive Topics (Dossier Style) */}
+        <CampaignChapters />
+
+        {/* SECTION 4: Data */}
+        <ImpactStats />
+        
+        {/* SECTION 5: Merchandise/Pin Section */}
+        <WearTheCircle />
+
+        {/* SECTION 6: Social Proof */}
+        <SocialShare />
+        
+        {/* Final Conversion Point */}
+        <section id="join" className="py-32 bg-black text-white text-center">
+          <div className="container mx-auto px-6">
+            <div className="mb-12">
+                <span className="text-4xl md:text-6xl font-serif font-bold italic tracking-tighter">#jointhecircle⚫</span>
+            </div>
+            <h2 className="text-5xl md:text-7xl font-serif italic mb-8 leading-tight tracking-tighter">Will you stand with us?</h2>
+            <p className="text-gray-400 text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+              Add your voice to the movement. Together, we're building a world where hate has no place to hide and justice is available to everyone.
+            </p>
+            <div className="flex justify-center">
+              <form className="w-full max-w-lg flex flex-col sm:flex-row gap-0 overflow-hidden rounded-none" onSubmit={(e) => e.preventDefault()}>
+                <input 
+                  type="email" 
+                  placeholder="Enter your email" 
+                  className="flex-1 px-6 py-5 text-black focus:outline-none bg-white font-light text-lg"
+                />
+                <button className="px-10 py-5 bg-white text-black border-l border-gray-200 font-bold uppercase tracking-widest hover:bg-gray-100 transition-colors">
+                  Join The Circle
+                </button>
+              </form>
+            </div>
+            <div className="mt-12 text-zinc-500 text-[10px] uppercase tracking-widest font-bold">
+                Project of Alta Humanitarian Group
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+};
